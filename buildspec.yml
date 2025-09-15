@@ -5,10 +5,9 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - REPOSITORY_URI=397827268871.dkr.ecr.ap-south-1.amazonaws.com/dev/python-app-repo
+      - REPOSITORY_URI=524718770348.dkr.ecr.ap-south-1.amazonaws.com/dev/python-app-repo
       - IMAGE_TAG=latest
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
-
+      -aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 524718770348.dkr.ecr.ap-south-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
