@@ -1,5 +1,4 @@
 FROM python:3.9-slim
 COPY . /
 RUN pip3 install flask
-CMD ["python","app.py"]
-EXPOSE 9090
+CMD ["python","app.py","9090"]
