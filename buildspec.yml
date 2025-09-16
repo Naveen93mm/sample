@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - REPOSITORY_URI=524718770348.dkr.ecr.ap-south-1.amazonaws.com/la
+      - REPOSITORY_URI=524718770348.dkr.ecr.ap-south-1.amazonaws.com/laz
       - IMAGE_TAG=latest
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
   build:
@@ -19,7 +19,7 @@ phases:
       - echo Pushing the Docker image to ECR...
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Creating imagedefinitions.json...
-      - DOCKER_CONTAINER_NAME=la
+      - DOCKER_CONTAINER_NAME=laz
       - printf '[{"name":"%s","imageUri":"%s"}]' "$DOCKER_CONTAINER_NAME" "$REPOSITORY_URI:$IMAGE_TAG" > imagedefinitions.json
       - echo $DOCKER_CONTAINER_NAME
       - cat imagedefinitions.json
