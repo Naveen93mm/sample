@@ -7,7 +7,9 @@ phases:
       - aws --version
       - REPOSITORY_URI=524718770348.dkr.ecr.ap-south-1.amazonaws.com/sam
       - IMAGE_TAG=latest
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 524718770348.dkr.ecr.ap-south-1.amazonaws.com  build:
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 524718770348.dkr.ecr.ap-south-1.amazonaws.com
+
+  build:
     commands:
       - echo "Build started on `date`"
       - echo Building the Docker image...
